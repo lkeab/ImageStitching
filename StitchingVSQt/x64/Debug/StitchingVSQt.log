@@ -1,0 +1,332 @@
+﻿生成启动时间为 2017/3/3 20:37:29。
+     1>项目“C:\Users\kelei\Desktop\ImageStitching\ImageStitchig\StitchingVSQt\StitchingVSQt.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /IF:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Debug /IF:\Qt\5.4\msvc2013_64\include\QtCore /IF:\Qt\5.4\msvc2013_64\include\QtGui /IF:\Qt\5.4\msvc2013_64\include\QtWidgets /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt stitching.cpp stitchingvsqt.cpp
+         stitching.cpp
+     1>c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8): error C2146: 语法错误: 缺少“;”(在标识符“pano_image”的前面)
+     1>c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>stitching.cpp(388): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(388): error C2146: 语法错误: 缺少“;”(在标识符“full_img”的前面)
+     1>stitching.cpp(388): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(388): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(390): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(390): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(390): error C2514: “std::vector”: 类没有构造函数
+                 C:\Program Files (x86)\VC\include\vector(650) : 参见“std::vector”的声明
+     1>stitching.cpp(398): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(399): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(399): error C2228: “.size”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(401): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(401): error C2228: “.empty”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(410): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(410): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(419): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(419): error C2228: “.size”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(419): error C2228: “.area”的左边必须有类/结构/联合
+     1>stitching.cpp(419): error C2661: “cv::min”: 没有重载函数接受 1 个参数
+     1>stitching.cpp(422): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(422): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(427): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(427): error C2228: “.size”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(427): error C2228: “.area”的左边必须有类/结构/联合
+     1>stitching.cpp(427): error C2661: “cv::min”: 没有重载函数接受 1 个参数
+     1>stitching.cpp(432): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(437): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(437): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(438): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(438): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(438): error C2228: “.clone”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(442): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(442): error C2228: “.release”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(443): error C2065: “img”: 未声明的标识符
+     1>stitching.cpp(443): error C2228: “.release”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitching.cpp(474): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(474): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(474): error C2133: “img_subset”: 未知的大小
+     1>stitching.cpp(474): error C2512: “std::vector”: 没有合适的默认构造函数可用
+     1>stitching.cpp(481): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(481): error C2663: “std::vector<_Ty,_Alloc>::push_back”: 2 个重载没有“this”指针的合法转换
+     1>stitching.cpp(485): error C2678: 二进制“=”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(948): 可能是“std::vector<_Ty,_Alloc_types::_Alloc> &std::vector<_Ty,_Alloc>::operator =(const std::vector<_Ty,_Alloc_types::_Alloc> &)”
+                 C:\Program Files (x86)\VC\include\vector(926): 或       “std::vector<_Ty,_Alloc_types::_Alloc> &std::vector<_Ty,_Alloc>::operator =(std::initializer_list<_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::value_type>)”
+                 C:\Program Files (x86)\VC\include\vector(822): 或       “std::vector<_Ty,_Alloc_types::_Alloc> &std::vector<_Ty,_Alloc>::operator =(std::vector<_Ty,_Alloc_types::_Alloc> &&)”
+                 尝试匹配参数列表“(std::vector, std::vector)”时
+     1>stitching.cpp(485): error C2582: “operator =”函数在“std::vector”中不可用
+     1>stitching.cpp(510): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(510): error C2146: 语法错误: 缺少“;”(在标识符“R”的前面)
+     1>stitching.cpp(510): error C2065: “R”: 未声明的标识符
+     1>stitching.cpp(511): error C2065: “R”: 未声明的标识符
+     1>stitching.cpp(513): error C2065: “R”: 未声明的标识符
+     1>stitching.cpp(557): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(557): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(557): error C2133: “rmats”: 未知的大小
+     1>stitching.cpp(557): error C2512: “std::vector”: 没有合适的默认构造函数可用
+     1>stitching.cpp(559): error C2663: “std::vector<_Ty,_Alloc>::push_back”: 2 个重载没有“this”指针的合法转换
+     1>stitching.cpp(560): error C2664: “void cv::detail::waveCorrect(std::vector<cv::Mat,std::allocator<_Ty>> &,cv::detail::WaveCorrectKind)”: 无法将参数 1 从“std::vector”转换为“std::vector<cv::Mat,std::allocator<_Ty>> &”
+                 with
+                 [
+                     _Ty=cv::Mat
+                 ]
+     1>stitching.cpp(562): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, size_t)”时
+     1>stitching.cpp(566): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(566): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(566): error C2514: “std::vector”: 类没有构造函数
+                 C:\Program Files (x86)\VC\include\vector(650) : 参见“std::vector”的声明
+     1>stitching.cpp(567): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(567): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(567): error C2514: “std::vector”: 类没有构造函数
+                 C:\Program Files (x86)\VC\include\vector(650) : 参见“std::vector”的声明
+     1>stitching.cpp(569): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(569): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(569): error C2514: “std::vector”: 类没有构造函数
+                 C:\Program Files (x86)\VC\include\vector(650) : 参见“std::vector”的声明
+     1>stitching.cpp(574): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(574): error C2228: “.create”的左边必须有类/结构/联合
+     1>stitching.cpp(574): error C2088: “[”: 对于 class 非法
+     1>stitching.cpp(574): error C2228: “.size”的左边必须有类/结构/联合
+     1>stitching.cpp(575): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(575): error C2228: “.setTo”的左边必须有类/结构/联合
+     1>stitching.cpp(627): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(627): error C2088: “[”: 对于 class 非法
+     1>stitching.cpp(627): error C2660: “cv::detail::RotationWarper::warp”: 函数不接受 5 个参数
+     1>stitching.cpp(630): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(630): error C2228: “.size”的左边必须有类/结构/联合
+     1>stitching.cpp(632): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(632): error C2088: “[”: 对于 class 非法
+     1>stitching.cpp(632): error C2660: “cv::detail::RotationWarper::warp”: 函数不接受 5 个参数
+     1>stitching.cpp(635): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(635): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitching.cpp(635): error C2514: “std::vector”: 类没有构造函数
+                 C:\Program Files (x86)\VC\include\vector(650) : 参见“std::vector”的声明
+     1>stitching.cpp(637): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitching.cpp(637): error C2228: “.convertTo”的左边必须有类/结构/联合
+     1>stitching.cpp(637): error C2088: “[”: 对于 class 非法
+     1>stitching.cpp(643): error C2664: “void cv::detail::ExposureCompensator::feed(const std::vector<cv::Point,std::allocator<_Ty>> &,const std::vector<cv::Mat,std::allocator<cv::Mat>> &,const std::vector<std::pair<cv::Mat,uchar>,std::allocator<std::pair<cv::Mat,uchar>>> &)”: 无法将参数 2 从“std::vector”转换为“const std::vector<cv::Mat,std::allocator<_Ty>> &”
+                 with
+                 [
+                     _Ty=cv::Point
+                 ]
+                 and
+                 [
+                     _Ty=cv::Mat
+                 ]
+                 原因如下:  无法从“std::vector”转换为“const std::vector<cv::Mat,std::allocator<_Ty>>”
+                 with
+                 [
+                     _Ty=cv::Mat
+                 ]
+                 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+     1>stitching.cpp(679): error C2664: “void cv::detail::SeamFinder::find(const std::vector<cv::Mat,std::allocator<_Ty>> &,const std::vector<cv::Point,std::allocator<cv::Point_<int>>> &,std::vector<_Ty,std::allocator<_Ty>> &)”: 无法将参数 1 从“std::vector”转换为“const std::vector<cv::Mat,std::allocator<_Ty>> &”
+                 with
+                 [
+                     _Ty=cv::Mat
+                 ]
+                 原因如下:  无法从“std::vector”转换为“const std::vector<cv::Mat,std::allocator<_Ty>>”
+                 with
+                 [
+                     _Ty=cv::Mat
+                 ]
+                 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+     1>stitching.cpp(682): error C2662: “void std::vector<_Ty,_Alloc>::clear(void) throw()”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+                 原因如下:  无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+                 转换要求第二个用户定义的转换运算符或构造函数
+     1>stitching.cpp(683): error C2662: “void std::vector<_Ty,_Alloc>::clear(void) throw()”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+                 原因如下:  无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+                 转换要求第二个用户定义的转换运算符或构造函数
+     1>stitching.cpp(684): error C2662: “void std::vector<_Ty,_Alloc>::clear(void) throw()”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+                 原因如下:  无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+                 转换要求第二个用户定义的转换运算符或构造函数
+     1>stitching.cpp(685): error C2662: “void std::vector<_Ty,_Alloc>::clear(void) throw()”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+                 原因如下:  无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+                 转换要求第二个用户定义的转换运算符或构造函数
+     1>stitching.cpp(694): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(694): error C2146: 语法错误: 缺少“;”(在标识符“img_warped”的前面)
+     1>stitching.cpp(694): error C2065: “img_warped”: 未声明的标识符
+     1>stitching.cpp(694): error C2065: “img_warped_s”: 未声明的标识符
+     1>stitching.cpp(695): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitching.cpp(695): error C2146: 语法错误: 缺少“;”(在标识符“dilated_mask”的前面)
+     1>stitching.cpp(695): error C2065: “dilated_mask”: 未声明的标识符
+     1>stitching.cpp(695): error C2065: “seam_mask”: 未声明的标识符
+     1>stitching.cpp(695): error C2065: “mask”: 未声明的标识符
+     1>stitching.cpp(695): error C2065: “mask_warped”: 未声明的标识符
+     1>stitching.cpp(711): error C2065: “full_img”: 未声明的标识符
+     1>stitching.cpp(711): fatal error C1003: 错误计数超过 100；正在停止编译
+         stitchingvsqt.cpp
+     1>c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8): error C2146: 语法错误: 缺少“;”(在标识符“pano_image”的前面)
+     1>c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>stitchingvsqt.cpp(225): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(225): error C2146: 语法错误: 缺少“;”(在标识符“imageInput”的前面)
+     1>stitchingvsqt.cpp(225): error C2065: “imageInput”: 未声明的标识符
+     1>stitchingvsqt.cpp(228): error C2065: “imageInput”: 未声明的标识符
+     1>stitchingvsqt.cpp(228): error C2228: “.cols”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitchingvsqt.cpp(229): error C2065: “imageInput”: 未声明的标识符
+     1>stitchingvsqt.cpp(229): error C2228: “.rows”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitchingvsqt.cpp(235): error C2065: “imageInput”: 未声明的标识符
+     1>stitchingvsqt.cpp(242): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(242): error C2146: 语法错误: 缺少“;”(在标识符“view_gray”的前面)
+     1>stitchingvsqt.cpp(242): error C2065: “view_gray”: 未声明的标识符
+     1>stitchingvsqt.cpp(243): error C2065: “imageInput”: 未声明的标识符
+     1>stitchingvsqt.cpp(243): error C2065: “view_gray”: 未声明的标识符
+     1>stitchingvsqt.cpp(245): error C2065: “view_gray”: 未声明的标识符
+     1>stitchingvsqt.cpp(248): error C2065: “view_gray”: 未声明的标识符
+     1>stitchingvsqt.cpp(288): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(288): error C2146: 语法错误: 缺少“;”(在标识符“cameraMatrix”的前面)
+     1>stitchingvsqt.cpp(288): error C2065: “cameraMatrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(288): error C2064: 项不会计算为接受 4 个参数的函数
+     1>stitchingvsqt.cpp(290): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(290): error C2146: 语法错误: 缺少“;”(在标识符“distCoeffs”的前面)
+     1>stitchingvsqt.cpp(290): error C2065: “distCoeffs”: 未声明的标识符
+     1>stitchingvsqt.cpp(290): error C2064: 项不会计算为接受 4 个参数的函数
+     1>stitchingvsqt.cpp(291): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(291): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitchingvsqt.cpp(291): error C2133: “tvecsMat”: 未知的大小
+     1>stitchingvsqt.cpp(291): error C2512: “std::vector”: 没有合适的默认构造函数可用
+     1>stitchingvsqt.cpp(292): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(292): error C2923: “std::vector”: 对于参数“_Ty”，“Mat”不是有效的 模板 类型变量
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+                 c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : 参见“Mat”的声明
+     1>stitchingvsqt.cpp(292): error C2133: “rvecsMat”: 未知的大小
+     1>stitchingvsqt.cpp(292): error C2512: “std::vector”: 没有合适的默认构造函数可用
+     1>stitchingvsqt.cpp(318): error C2065: “cameraMatrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(318): error C2065: “distCoeffs”: 未声明的标识符
+     1>stitchingvsqt.cpp(332): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitchingvsqt.cpp(332): error C2088: “[”: 对于 class 非法
+     1>stitchingvsqt.cpp(332): error C2065: “cameraMatrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(332): error C2065: “distCoeffs”: 未声明的标识符
+     1>stitchingvsqt.cpp(335): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(335): error C2146: 语法错误: 缺少“;”(在标识符“tempImagePointMat”的前面)
+     1>stitchingvsqt.cpp(335): error C2065: “tempImagePointMat”: 未声明的标识符
+     1>stitchingvsqt.cpp(335): error C2064: 项不会计算为接受 3 个参数的函数
+     1>stitchingvsqt.cpp(336): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(336): error C2146: 语法错误: 缺少“;”(在标识符“image_points2Mat”的前面)
+     1>stitchingvsqt.cpp(336): error C2065: “image_points2Mat”: 未声明的标识符
+     1>stitchingvsqt.cpp(336): error C2064: 项不会计算为接受 3 个参数的函数
+     1>stitchingvsqt.cpp(339): error C2065: “image_points2Mat”: 未声明的标识符
+     1>stitchingvsqt.cpp(339): error C2228: “.at”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitchingvsqt.cpp(340): error C2065: “tempImagePointMat”: 未声明的标识符
+     1>stitchingvsqt.cpp(340): error C2228: “.at”的左边必须有类/结构/联合
+                 类型是“unknown-type”
+     1>stitchingvsqt.cpp(342): error C2065: “image_points2Mat”: 未声明的标识符
+     1>stitchingvsqt.cpp(342): error C2065: “tempImagePointMat”: 未声明的标识符
+     1>stitchingvsqt.cpp(354): error C2872: “Mat”: 不明确的符号
+                 可能是“c:\users\kelei\desktop\imagestitching\imagestitchig\stitchingvsqt\stitching.h(8) : int Mat”
+                 或       “F:\OpenCV\opencv\build\include\opencv2/core/core.hpp(1689) : cv::Mat”
+     1>stitchingvsqt.cpp(354): error C2146: 语法错误: 缺少“;”(在标识符“rotation_matrix”的前面)
+     1>stitchingvsqt.cpp(354): error C2065: “rotation_matrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(354): error C2064: 项不会计算为接受 4 个参数的函数
+     1>stitchingvsqt.cpp(356): error C2065: “cameraMatrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(358): error C2065: “distCoeffs”: 未声明的标识符
+     1>stitchingvsqt.cpp(362): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitchingvsqt.cpp(364): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+     1>stitchingvsqt.cpp(364): error C2065: “rotation_matrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(366): error C2065: “rotation_matrix”: 未声明的标识符
+     1>stitchingvsqt.cpp(368): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+                 C:\Program Files (x86)\VC\include\vector(1196): 可能是“_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type)”
+                 C:\Program Files (x86)\VC\include\vector(1180): 或       “_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::const_reference std::vector<_Ty,_Alloc>::operator [](_Vector_alloc<!std::is_empty<_Alloc_types::_Alloc>::value,std::_Vec_base_types<_Ty,_Alloc_types::_Alloc>>::size_type) const”
+                 尝试匹配参数列表“(std::vector, int)”时
+         正在生成代码...
+     1>已完成生成项目“C:\Users\kelei\Desktop\ImageStitching\ImageStitchig\StitchingVSQt\StitchingVSQt.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:03.78

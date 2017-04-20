@@ -1,0 +1,6 @@
+Debug
+Release/*.jpg
+Release/*.pdb
+*.sdf
+stitching/Debug
+stitching/Release

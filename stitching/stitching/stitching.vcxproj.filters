@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\detatil">
+      <UniqueIdentifier>{a096d216-99fe-477f-a7c4-eb38fa2b82dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\detail">
+      <UniqueIdentifier>{34ea1a3d-679e-4f3b-af19-7f2e15f5298c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stitcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\motion_estimators.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\matchers.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\blenders.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\seam_finders.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\warpers.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\autocalib.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\camera.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\exposure_compensate.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\util.cpp">
+      <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="BundleAdjuster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stitcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\autocalib.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\blenders.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\camera.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\exposure_compensate.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\matchers.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\motion_estimators.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\seam_finders.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\util.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\util_inl.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\warpers.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\warpers_inl.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="warpers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\cvconfig.h">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\precomp.hpp">
+      <Filter>Header Files\detatil</Filter>
+    </ClInclude>
+    <ClInclude Include="BundleAdjuster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
