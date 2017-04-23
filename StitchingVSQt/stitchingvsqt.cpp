@@ -6,9 +6,12 @@
 #include <qprogressdialog.h>
 #include <iostream>
 #include <fstream>
+#include <QRunnable>  
 #include <QCompleter>
 #include <QMainWindow>
 #include <QInputDialog>
+
+#include <QtConcurrent\QtConcurrentRun>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <qgraphicsview.h>
@@ -36,11 +39,13 @@ extern string ba_cost_func;
 extern string warp_type;
 extern string seam_find_type;
 extern string result_name;
-extern float   blend_strength;
+extern float  blend_strength;
 extern vector<std::vector<std::string>> imageNames;
 extern vector<int> idx;
 
 QString path="";
+
+
 
 StitchingVSQt::StitchingVSQt(QWidget *parent)
 	: QMainWindow(parent), ui(new Ui::StitchingVSQt)
@@ -121,6 +126,7 @@ int StitchingVSQt::errorReport(){
 void StitchingVSQt::startCal(){
 	if (entered){
 		try{	
+			//QtConcurrent::run(startCalculation);
 			startCalculation();
 		}
 		catch (cv::Exception& e){
@@ -151,26 +157,8 @@ void StitchingVSQt::fileOpenActionSlot()
 //	QMessageBox::warning(this, QString::fromLocal8Bit("提示"), QString::fromLocal8Bit("你点击了~打开文件~菜单"), QMessageBox::Yes | QMessageBox::No);
 	
 	vector<QStringList>imagNameTemp;
-	QMessageBox::StandardButton rb = QMessageBox::question(NULL, QString::fromLocal8Bit("图像层数"), QString::fromLocal8Bit("是否分层导入图像？"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-	if (rb == QMessageBox::Yes)
-	{
-		bool isOK;
-		int level = 0;
-		QString text = QInputDialog::getText(NULL, QString::fromLocal8Bit("层数"),
-			QString::fromLocal8Bit("请输入有效的拼接层数"),
-			QLineEdit::Normal,
-			"",
-			&isOK);
-		if (isOK) {
-			level = text.toInt();
-			if (level <= 0){
-				return;
-			}
-		}
-		else{
-			return;
-		}
-		for (int i = 0; i <level; i++){
+	int i = 0;
+    while(true){
 			std::stringstream stream;
 			stream << i+1; 
 			QStringList fileNames;
@@ -180,30 +168,76 @@ void StitchingVSQt::fileOpenActionSlot()
 				"",
 				"IMAGE Files(*.jpg)",
 				0);
+			if ((filesTemp.length() == 0) && (imagNameTemp.size() != 0)){
+				break;
+			}
+
+			if ((filesTemp.length() == 0) && (imagNameTemp.size()==0)){
+				return;
+			}
 			fileNames.append(filesTemp);
 			imagNameTemp.push_back(fileNames);
 			idx.push_back(0);
+			i++;
 			//imagNameTemp.push_back()
-			if (fileNames.length() == 0)
+			/*if (imagNameTemp.size() == 0)
 			{
 				return;
-			}
-		}
+			}*/
 	}
-	else{
-		QStringList fileNames;
-		fileNames = QFileDialog::getOpenFileNames(this,
-			tr("Open File"),
-			"",
-			"IMAGE Files(*.jpg)",
-			0);
-		if (fileNames.length() == 0)
-		{
-			return;
-		}
-		imagNameTemp.push_back(fileNames);
-		idx.push_back(0);
-	}
+	//QMessageBox::StandardButton rb = QMessageBox::question(NULL, QString::fromLocal8Bit("图像层数"), QString::fromLocal8Bit("是否分层导入图像？"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+	//if (rb == QMessageBox::Yes)
+	//{
+	//	bool isOK;
+	//	int level = 0;
+	//	QString text = QInputDialog::getText(NULL, QString::fromLocal8Bit("层数"),
+	//		QString::fromLocal8Bit("请输入有效的拼接层数"),
+	//		QLineEdit::Normal,
+	//		"",
+	//		&isOK);
+	//	if (isOK) {
+	//		level = text.toInt();
+	//		if (level <= 0){
+	//			return;
+	//		}
+	//	}
+	//	else{
+	//		return;
+	//	}
+	//	for (int i = 0; i <level; i++){
+	//		std::stringstream stream;
+	//		stream << i+1; 
+	//		QStringList fileNames;
+	//		//fileNames;
+	//		QStringList	filesTemp=QFileDialog::getOpenFileNames(this,
+	//			QString::fromLocal8Bit("第") +QString::fromStdString(stream.str()) + QString::fromLocal8Bit("层"),
+	//			"",
+	//			"IMAGE Files(*.jpg)",
+	//			0);
+	//		fileNames.append(filesTemp);
+	//		imagNameTemp.push_back(fileNames);
+	//		idx.push_back(0);
+	//		//imagNameTemp.push_back()
+	//		if (fileNames.length() == 0)
+	//		{
+	//			return;
+	//		}
+	//	}
+	//}
+	//else{
+	//	QStringList fileNames;
+	//	fileNames = QFileDialog::getOpenFileNames(this,
+	//		tr("Open File"),
+	//		"",
+	//		"IMAGE Files(*.jpg)",
+	//		0);
+	//	if (fileNames.length() == 0)
+	//	{
+	//		return;
+	//	}
+	//	imagNameTemp.push_back(fileNames);
+	//	idx.push_back(0);
+	//}
 	
 	//QProgressDialog progress(tr("正在导入图片数据，请稍候..."),
 	//	tr("取消"),
@@ -240,6 +274,7 @@ void StitchingVSQt::fileOpenActionSlot()
 	entered = true;
 //	QMessageBox::warning(this, QString::fromLocal8Bit("提示"), QString::fromLocal8Bit("图片选取成功，请点击开始计算按钮"));
 	startCal();
+	//QtConcurrent::run(startCalculation);
 }
 
 void StitchingVSQt::fileCloseActionSlot()

@@ -11,6 +11,6 @@ int main(int argc, char *argv[])
 	StitchingVSQt w;
 	w.setWindowIcon(QIcon("./logo.png"));
 	w.show();
-
+	
 	return a.exec();
 }

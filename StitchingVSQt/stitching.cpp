@@ -23,6 +23,7 @@
 #include "opencv2/stitching/warpers.hpp"
 #include "stitching.h"
 #include "qmessagebox.h"
+#include <QRunnable>
 #include "stitchingvsqt.h"
 
 
@@ -116,7 +117,7 @@ typedef void (*PANOIMAGE)(void *img, const std::string &name);
 9.融合，多频段融合，光照补偿
 */
 
-vector<string> img_names;
+//vector<string> img_names;
 bool preview = false; //以预览模式运行程序，比正常模式要快，但输出图像分辨率低，拼接的分辨率compose_megapix 设置为0.6
 bool try_gpu = false;
 double work_megapix = 0.6;//图像匹配的分辨率大小，图像的面积尺寸变为work_megapix*100000，默认为0.6
@@ -337,12 +338,9 @@ string& replace_all_distinct(string&   str, const   string&   old_value, const  
 	return   str;
 }
 
-void storeImageFileName(string name){
-	img_names.push_back(name);
-}
-
 int startCalculation()
 {
+	
 	StitchingVSQt s;
 	std::string msg;
 	const char* dllName = "stitching.dll";
@@ -354,9 +352,9 @@ int startCalculation()
 		STITCH fp = STITCH(GetProcAddress(hDll, "stitch"));
 		PANOIMAGE fPa = PANOIMAGE(GetProcAddress(hDll, "writeImage"));
 		if (fp != NULL){
-			s.showMessage(QString::fromLocal8Bit("找到dll中的函数"));
+			//s.showMessage(QString::fromLocal8Bit("找到dll中的函数"));
 			void* p=fp(imageNames, nullptr, msg);
-			s.showMessage(QString::fromLocal8Bit("第一个函数调用完毕"));
+			//s.showMessage(QString::fromLocal8Bit("第一个函数调用完毕"));
 
 			QString fileName(QString::fromStdString(result_name));
 			QString dir = QFileDialog::getExistingDirectory(NULL, QString::fromLocal8Bit("选择生成图片保存目录"),
@@ -366,8 +364,10 @@ int startCalculation()
 			s.changePicture(dir + "/" + fileName);
 
 			fPa(p, (dir + "/" + fileName).toStdString());
-			s.showMessage(QString::fromLocal8Bit("第二个函数调用完毕"));
-			img_names.clear();
+			//s.showMessage(QString::fromLocal8Bit("第二个函数调用完毕"));
+			/*img_names.clear();*/
+			imageNames.clear();
+			idx.clear();
 			delete p;
 		}
 		else{
