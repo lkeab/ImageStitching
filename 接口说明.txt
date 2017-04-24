@@ -1,0 +1,75 @@
+DLL内部需修改的部分：
+
+函数stitch的接口：
+由：
+void *stitch(std::vector<std::vector<std::string>> &img_names, const void *config, std::string &msg)
+改为 ：
+void *stitch(std::vector<std::vector<std::string>> &img_names, const void *config, std::string &msg, void(*func)(int));
+
+然后内部通过调用函数指针func,并传入int参数控制进度条，数值与进度的对照关系如下（传入值为12时进度条关闭）。
+
+
+DLL 外部的实现(供内部传递参数int值时参照)：
+QProgressDialog progress(QString::fromLocal8Bit("正在导入图片数据，请稍候..."),
+		QString::fromLocal8Bit("取消"),
+		0, 12, // Range
+		NULL);
+
+void controlProgress(int status){
+	switch (status)
+	{
+	case 1:
+		progress.show();
+		qApp->processEvents();
+		progress.setWindowModality(Qt::WindowModal);
+		progress.setWindowTitle(QString::fromLocal8Bit("正在导入图片数据，请稍候..."));
+
+		progress.setValue(1);
+		progress.setModal(true);
+		progress.setLabelText(QString::fromLocal8Bit("读取图片，请稍候..."));
+		break;
+	case 2:
+		progress.setValue(2);
+		progress.setLabelText(QString::fromLocal8Bit("特征点提取...."));
+		break;
+	case 3:
+		progress.setValue(3);
+		progress.setLabelText(QString::fromLocal8Bit("特征点匹配...."));
+		break;
+	case 4:
+		progress.setValue(4);
+		progress.setLabelText(QString::fromLocal8Bit("估计相机参数，计算变换矩阵...."));
+		break;
+	case 5:
+		progress.setValue(5);
+		progress.setLabelText(QString::fromLocal8Bit("波形矫正...."));
+		break;
+	case 6:
+		progress.setValue(6);
+		progress.setLabelText(QString::fromLocal8Bit("柱面投影...."));
+		break;
+	case 7:
+                progress.setValue(7);
+		break;
+	case 8: 
+                progress.setValue(8);
+		break;
+	case 9:
+		progress.setValue(9);
+		progress.setLabelText(QString::fromLocal8Bit("图像融合...."));
+		break;
+	case 10:
+		progress.setValue(10);
+		progress.setLabelText(QString::fromLocal8Bit("光照补偿...."));
+		break;
+	case 11:
+		progress.setValue(11);
+		progress.setLabelText(QString::fromLocal8Bit("根据corners顶点和图像大小确定最终全景图尺寸...."));
+		break;
+	case 12:
+		progress.setValue(12);
+		break;
+	default:
+		break;
+	}		
+}

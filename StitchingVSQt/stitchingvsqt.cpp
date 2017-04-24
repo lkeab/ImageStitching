@@ -45,8 +45,6 @@ extern vector<int> idx;
 
 QString path="";
 
-
-
 StitchingVSQt::StitchingVSQt(QWidget *parent)
 	: QMainWindow(parent), ui(new Ui::StitchingVSQt)
 {
