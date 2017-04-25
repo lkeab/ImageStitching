@@ -1,3 +1,0 @@
-./CameraCalibrationIMG/chess1.jpg
-./CameraCalibrationIMG/chess2.jpg
-./CameraCalibrationIMG/chess3.jpg

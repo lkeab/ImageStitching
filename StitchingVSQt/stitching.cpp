@@ -33,10 +33,12 @@ using namespace cv::detail;
 
 typedef void*(*STITCH)(std::vector<std::vector<std::string>> &img_names,
 	const void *config,
-	std::string &msg);
+	std::string &msg,
+	void(*func)(int));
 
 typedef void (*PANOIMAGE)(void *img, const std::string &name);
 
+typedef void (*RELEASEIMAGE)(void *img);
 /*
 运行流程：
 1.命令行调用程序，输入源图像以及程序的参数
@@ -87,6 +89,76 @@ vector<int> idx;
 
 class StitchingVSQt;
 
+
+
+void controlProgress(int status){
+	//ostringstream stream;
+	//stream << status;  //n为int类型
+
+	//StitchingVSQt s;
+	//s.showMessage(QString::fromStdString(stream.str()));
+
+	static QProgressDialog progress(QString::fromLocal8Bit("正在导入图片数据，请稍候..."),
+		QString::fromLocal8Bit("取消"),
+		0, 12, // Range
+		NULL);
+		progress.show();
+		qApp->processEvents();
+		progress.setWindowModality(Qt::WindowModal);
+		progress.setWindowTitle(QString::fromLocal8Bit("正在导入图片数据，请稍候..."));
+	
+		switch (status)
+		{
+		case 1:
+			progress.setValue(1);
+			progress.setModal(true);
+			progress.setLabelText(QString::fromLocal8Bit("读取图片，请稍候..."));
+			break;
+		case 2:
+			progress.setValue(2);
+			progress.setLabelText(QString::fromLocal8Bit("特征点提取...."));
+			break;
+		case 3:
+			progress.setValue(3);
+			progress.setLabelText(QString::fromLocal8Bit("特征点匹配...."));
+			break;
+		case 4:
+			progress.setValue(4);
+			progress.setLabelText(QString::fromLocal8Bit("姿态估计...."));
+			break;
+		case 5:
+			progress.setValue(5);
+			progress.setLabelText(QString::fromLocal8Bit("波形矫正...."));
+			break;
+		case 6:
+			progress.setValue(6);
+			progress.setLabelText(QString::fromLocal8Bit("柱面投影...."));
+			break;
+		case 7:
+			progress.setValue(7);
+			break;
+		case 8:
+			progress.setValue(8);
+			break;
+		case 9:
+			progress.setValue(9);
+			progress.setLabelText(QString::fromLocal8Bit("图像融合...."));
+			break;
+		case 10:
+			progress.setValue(10);
+			break;
+		case 11:
+			progress.setValue(11);
+			progress.setLabelText(QString::fromLocal8Bit("输出...."));
+			break;
+		case 12:
+			progress.setValue(12);
+			break;
+		default:
+			break;
+		}
+}
+
 string& replace_all_distinct(string&   str, const   string&   old_value, const   string&   new_value)
 {
 	for (string::size_type pos(0); pos != string::npos; pos += new_value.length())   {
@@ -99,20 +171,22 @@ string& replace_all_distinct(string&   str, const   string&   old_value, const  
 
 int startCalculation()
 {
-	
 	StitchingVSQt s;
 	std::string msg;
 	const char* dllName = "stitching.dll";
     const char* funName1 = "stitch";
-	const char* funName2 = "pano_image";
+	const char* funName2 = "writeImage";
 	
 	HINSTANCE hDll = LoadLibrary(TEXT("stitching.dll"));
 	if (hDll != NULL){
-		STITCH fp = STITCH(GetProcAddress(hDll, "stitch"));
-		PANOIMAGE fPa = PANOIMAGE(GetProcAddress(hDll, "writeImage"));
+		STITCH fp = STITCH(GetProcAddress(hDll, funName1));
+		PANOIMAGE fPa = PANOIMAGE(GetProcAddress(hDll, funName2));
+		//RELEASEIMAGE fRe = RELEASEIMAGE(GetProcAddress(hDll, "releaseImage"));
 		if (fp != NULL){
+			void(*control)(int);
+			control = controlProgress;
 			//s.showMessage(QString::fromLocal8Bit("找到dll中的函数"));
-			void* p=fp(imageNames, nullptr, msg);
+			void* p=fp(imageNames, nullptr, msg,control);
 			//s.showMessage(QString::fromLocal8Bit("第一个函数调用完毕"));
 
 			QString fileName(QString::fromStdString(result_name));
@@ -123,8 +197,8 @@ int startCalculation()
 			s.changePicture(dir + "/" + fileName);
 
 			fPa(p, (dir + "/" + fileName).toStdString());
+			//fRe(p);
 			//s.showMessage(QString::fromLocal8Bit("第二个函数调用完毕"));
-			/*img_names.clear();*/
 			imageNames.clear();
 			idx.clear();
 			delete p;
@@ -143,66 +217,5 @@ int startCalculation()
 }
 
 
-QProgressDialog progress(QString::fromLocal8Bit("正在导入图片数据，请稍候..."),
-		QString::fromLocal8Bit("取消"),
-		0, 12, // Range
-		NULL);
 
-void controlProgress(int status){
-	switch (status)
-	{
-	case 1:
-		progress.show();
-		qApp->processEvents();
-		progress.setWindowModality(Qt::WindowModal);
-		progress.setWindowTitle(QString::fromLocal8Bit("正在导入图片数据，请稍候..."));
 
-		progress.setValue(1);
-		progress.setModal(true);
-		progress.setLabelText(QString::fromLocal8Bit("读取图片，请稍候..."));
-		break;
-	case 2:
-		progress.setValue(2);
-		progress.setLabelText(QString::fromLocal8Bit("特征点提取...."));
-		break;
-	case 3:
-		progress.setValue(3);
-		progress.setLabelText(QString::fromLocal8Bit("特征点匹配...."));
-		break;
-	case 4:
-		progress.setValue(4);
-		progress.setLabelText(QString::fromLocal8Bit("估计相机参数，计算变换矩阵...."));
-		break;
-	case 5:
-		progress.setValue(5);
-		progress.setLabelText(QString::fromLocal8Bit("波形矫正...."));
-		break;
-	case 6:
-		progress.setValue(6);
-		progress.setLabelText(QString::fromLocal8Bit("柱面投影...."));
-		break;
-	case 7:
-		progress.setValue(7);
-		break;
-	case 8:
-		progress.setValue(8);
-		break;
-	case 9:
-		progress.setValue(9);
-		progress.setLabelText(QString::fromLocal8Bit("图像融合...."));
-		break;
-	case 10:
-		progress.setValue(10);
-		progress.setLabelText(QString::fromLocal8Bit("光照补偿...."));
-		break;
-	case 11:
-		progress.setValue(11);
-		progress.setLabelText(QString::fromLocal8Bit("根据corners顶点和图像大小确定最终全景图尺寸...."));
-		break;
-	case 12:
-		progress.setValue(12);
-		break;
-	default:
-		break;
-	}		
-}
