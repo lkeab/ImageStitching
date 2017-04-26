@@ -4,8 +4,8 @@ Solver Summary (v 1.11.0-eigen-(3.2.8)-lapack-suitesparse-(4.5.0)-openmp)
                                      Original                  Reduced
 Parameter blocks                            3                        3
 Parameters                                 21                       21
-Residual blocks                           385                      385
-Residual                                  770                      770
+Residual blocks                           413                      413
+Residual                                  826                      826
 
 Minimizer                        TRUST_REGION
 
@@ -18,23 +18,23 @@ Threads                                     3                        3
 Linear solver threads                       1                        1
 
 Cost:
-Initial                         4.070869e+004
-Final                           3.012580e+002
-Change                          4.040743e+004
+Initial                         4.090057e+004
+Final                           3.029739e+002
+Change                          4.059759e+004
 
-Minimizer iterations                        5
-Successful steps                            5
+Minimizer iterations                        4
+Successful steps                            4
 Unsuccessful steps                          0
 
 Time (in seconds):
 Preprocessor                           0.0001
 
-  Residual evaluation                  0.0007
-  Jacobian evaluation                  0.0185
-  Linear solver                        0.0044
-Minimizer                              0.0246
+  Residual evaluation                  0.0006
+  Jacobian evaluation                  0.0158
+  Linear solver                        0.0032
+Minimizer                              0.0203
 
 Postprocessor                          0.0000
-Total                                  0.0247
+Total                                  0.0204
 
-Termination:                      CONVERGENCE (Function tolerance reached. |cost_change|/cost: 1.163201e-007 <= 1.000000e-006)
+Termination:                      CONVERGENCE (Function tolerance reached. |cost_change|/cost: 1.306255e-007 <= 1.000000e-006)

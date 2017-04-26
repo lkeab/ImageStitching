@@ -25,7 +25,7 @@
 #include "qmessagebox.h"
 #include <QRunnable>
 #include "stitchingvsqt.h"
-
+#include <QElapsedTimer>
 
 using namespace std;
 using namespace cv;
@@ -97,7 +97,13 @@ void controlProgress(int status){
 
 	//StitchingVSQt s;
 	//s.showMessage(QString::fromStdString(stream.str()));
-
+	QElapsedTimer et1;
+	et1.start();
+	while (et1.elapsed()<250)
+	{
+		QCoreApplication::processEvents();
+	}
+	
 	static QProgressDialog progress(QString::fromLocal8Bit("正在导入图片数据，请稍候..."),
 		QString::fromLocal8Bit("取消"),
 		0, 12, // Range
@@ -156,6 +162,13 @@ void controlProgress(int status){
 			break;
 		default:
 			break;
+		}
+
+		QElapsedTimer et2;
+		et2.start();
+		while (et2.elapsed()<250)
+		{
+			QCoreApplication::processEvents();
 		}
 }
 
