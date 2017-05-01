@@ -67,10 +67,7 @@ double seam_megapix = 0.1; //拼接缝像素的大小 默认是0.1
 double compose_megapix = -1; //拼接分辨率
 float conf_thresh = 1.f; //两幅图来自同一全景图的置信度，默认为1.0
 string features_type = "surf";
-//string features_type = "orb";
 string ba_cost_func = "ray";   //光束平均法的误差函数选择
-//string ba_cost_func = "reproj";
-
 string ba_refine_mask = "xxxxx";
 bool do_wave_correct = true;
 WaveCorrectKind wave_correct = detail::WAVE_CORRECT_HORIZ;//波形校验 水平，垂直或者没有 默认是horiz
@@ -88,8 +85,6 @@ vector<std::vector<std::string>> imageNames;
 vector<int> idx;
 
 class StitchingVSQt;
-
-
 
 void controlProgress(int status){
 	//ostringstream stream;
@@ -182,6 +177,7 @@ string& replace_all_distinct(string&   str, const   string&   old_value, const  
 	return   str;
 }
 
+//主要计算过程
 int startCalculation()
 {
 	StitchingVSQt s;

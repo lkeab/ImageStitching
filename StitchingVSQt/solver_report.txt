@@ -27,14 +27,14 @@ Successful steps                            4
 Unsuccessful steps                          0
 
 Time (in seconds):
-Preprocessor                           0.0001
+Preprocessor                           0.0002
 
-  Residual evaluation                  0.0006
-  Jacobian evaluation                  0.0158
-  Linear solver                        0.0032
-Minimizer                              0.0203
+  Residual evaluation                  0.0005
+  Jacobian evaluation                  0.0139
+  Linear solver                        0.0031
+Minimizer                              0.0181
 
 Postprocessor                          0.0000
-Total                                  0.0204
+Total                                  0.0183
 
 Termination:                      CONVERGENCE (Function tolerance reached. |cost_change|/cost: 1.306255e-007 <= 1.000000e-006)

@@ -10,7 +10,7 @@
 #include <QCompleter>
 #include <QMainWindow>
 #include <QInputDialog>
-
+#include <thread>
 #include <QtConcurrent\QtConcurrentRun>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -20,6 +20,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/calib3d/calib3d.hpp"
 #include "opencv2/highgui/highgui.hpp"
+#include "CSimpleThread.h"
 
 using std::string;
 using std::ifstream;
@@ -44,6 +45,17 @@ extern vector<std::vector<std::string>> imageNames;
 extern vector<int> idx;
 
 QString path="";
+
+//¿Õ¹¹Ôìº¯Êý
+CSimpleThread::CSimpleThread()
+{
+
+}
+
+void CSimpleThread::run()
+{
+	startCalculation();
+}
 
 StitchingVSQt::StitchingVSQt(QWidget *parent)
 	: QMainWindow(parent), ui(new Ui::StitchingVSQt)
@@ -125,7 +137,13 @@ void StitchingVSQt::startCal(){
 	if (entered){
 		try{	
 			//QtConcurrent::run(startCalculation);
-			startCalculation();
+			//startCalculation();
+			/*std::thread t(startCalculation);
+			t.join();*/
+			CSimpleThread *SThread = new CSimpleThread();
+			SThread->run();
+			/*SThread->start();
+			SThread->exit();*/
 		}
 		catch (cv::Exception& e){
 			const char*m = e.what();
