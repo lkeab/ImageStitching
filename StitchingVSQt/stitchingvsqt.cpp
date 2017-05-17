@@ -22,6 +22,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "CSimpleThread.h"
 
+
 using std::string;
 using std::ifstream;
 using std::ofstream;
@@ -179,6 +180,8 @@ void StitchingVSQt::fileOpenActionSlot()
 			stream << i+1; 
 			QStringList fileNames;
 			//fileNames;
+
+			
 			QStringList	filesTemp=QFileDialog::getOpenFileNames(this,
 				QString::fromLocal8Bit("第") +QString::fromStdString(stream.str()) + QString::fromLocal8Bit("层"),
 				"",
@@ -191,15 +194,20 @@ void StitchingVSQt::fileOpenActionSlot()
 			if ((filesTemp.length() == 0) && (imagNameTemp.size()==0)){
 				return;
 			}
+			if (i >= 5 || filesTemp.length() >= 8){
+				QMessageBox::StandardButton rb = QMessageBox::question(NULL, QString::fromLocal8Bit("提示"), QString::fromLocal8Bit("是否确认本层图像导入无误"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+				if (rb == QMessageBox::No)
+				{
+					//QMessageBox::aboutQt(NULL, "");
+					continue;
+				}
+			}
+			
+
 			fileNames.append(filesTemp);
 			imagNameTemp.push_back(fileNames);
 			idx.push_back(0);
 			i++;
-			//imagNameTemp.push_back()
-			/*if (imagNameTemp.size() == 0)
-			{
-				return;
-			}*/
 	}
 	//QMessageBox::StandardButton rb = QMessageBox::question(NULL, QString::fromLocal8Bit("图像层数"), QString::fromLocal8Bit("是否分层导入图像？"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 	//if (rb == QMessageBox::Yes)
