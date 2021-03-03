@@ -1,16 +1,17 @@
 #  ImageStitchig
-基于opencv 2.49实现的的全景多层图像拼接（opencv仅仅提供单层的拼接）  
-QT+VS2013联合开发，QT用作界面设计  
-分层导入多张图像，最终输出得到一整张全景图像  
+Panoramic multi-layer image stitching based on opencv 2.49 (opencv only provides single-layer stitching)
+QT+VS2013 joint development, QT used as interface design
+Import multiple images in layers, and finally output a whole panoramic image 
 
-# 主要流程：
-1.输入源图像以及程序的参数  
-2.特征点检测，判断是使用surf还是orb，默认是surf   
-3.对图像的特征点进行匹配，使用最近邻和次近邻方法，将两个最优的匹配的置信度保存下来。  
-4.对图像进行排序以及将置信度高的图像保存到同一个集合中，删除置信度比较低的图像间的匹配，得到能正确匹配的图像序列。这样将置信度高于门限的所有匹配合并到一个集合中。  
-5.对所有图像进行相机参数粗略估计，然后求出旋转矩阵  
-6.使用光束平均法进一步精准的估计出旋转矩阵。  
-7.波形校正，水平或者垂直  
-8.拼接9.融合，多频段融合，光照补偿  
+# Main process:
+1. Input source image and program parameters
+2. Feature point detection, to determine whether to use surf or orb, the default is surf
+3. Matching the feature points of the image, using the nearest neighbor and second nearest neighbor methods, and save the confidence of the two optimal matches.
+4. Sort the images and save the images with high confidence in the same set, delete the matches between the images with lower confidence, and get the image sequence that can be matched correctly. In this way, all matches with confidence higher than the threshold are merged into one set.
+5. Roughly estimate the camera parameters for all images, and then calculate the rotation matrix
+6. Use the beam averaging method to further accurately estimate the rotation matrix.
+7. Waveform correction, horizontal or vertical
+8. Splicing 
+9. Fusion, multi-band fusion, illumination compensation
 
-武汉大学创新创业项目 2017.4
+Wuhan University Innovation and Entrepreneurship Project 2017.4
